@@ -15,17 +15,19 @@ int sente;
 int gote;
 int passCount;
 int moveCount;
+int saki;
+
 
  
 void setup()
 {
   teban = KURO;
- 
   sente = COMP;
   gote = HITO;
- 
   passCount = 0;
   moveCount = 0;
+  saki =1;
+  
  
   size(640, 640);
   ban = new int[10][10];
@@ -91,9 +93,14 @@ void mouseClicked()
 {
   // mouseX, mouseY are in Screen Coordinate (0-640)
   // convert them to Logical Coordinate (1-8)
-  println("(" + mouseX + "," + mouseY + ")");
-  int gx = 1;
-  int gy = 1;
+  println("(" + mouseX/CELLSIZE + "," + mouseY/CELLSIZE + ")");
+   
+   
+  int gx = mouseX/CELLSIZE+1;
+  int gy = mouseY/CELLSIZE+1;
+  
+  
+  
 
   ban[gx][gy] = teban;
   // update teban to the next color 
