@@ -17,7 +17,6 @@ int passCount;
 int moveCount;
 int saki;
 
-
  
 void setup()
 {
@@ -104,4 +103,5 @@ void mouseClicked()
 
   ban[gx][gy] = teban;
   // update teban to the next color 
+  teban *=-1;
 }
